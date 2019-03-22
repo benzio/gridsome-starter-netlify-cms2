@@ -1,35 +1,34 @@
-# WordPress starter for Gridsome
+# Netlify CMS starter for Gridsome
 
 ## Install
-`gridsome create my-gridsome-project wordpress`
+`gridsome create my-gridsome-project netlify-cms`
 
 ## Guide
 
-Add your WordPress URL to the plugin options.
+Add your git repository to the `config.yml`.
 
-```js
-// gridsome.config.js
+```yml
 
-module.exports = {
-  plugins: [
-    {
-      use: '@gridsome/source-wordpress',
-      options: {
-        baseUrl: 'YOUR_WEBSITE_URL', // required
-        typeName: 'WordPress', // GraphQL schema name (Optional)
-        perPage: 100, // How many posts to load from server per request (Optional)
-        concurrent: 10, // How many requests to run simultaneously (Optional)
-        routes: {
-          post: '/:year/:month/:day/:slug', //adds route for "post" post type (Optional)
-          post_tag: '/tag/:slug' // adds route for "post_tag" post type (Optional)
-        }
-      }
-    }
-  ]
-}
+backend:
+  name: github # Source provider, github, gitlab, etc
+  repo: your_name/repo_name # repository name
+
+media_folder: "uploads"
+public_folder: "../uploads"
+
+collections:
+  - name: "posts"
+    label: "Posts"
+    folder: "posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Excerpt", name: "excerpt", widget: "string"}
+      - {label: "Body", name: "content", widget: "markdown"}
 
 ```
 
 ## Included templates
 
-This starter includes basic templates for categories, tags and posts.
+This starter includes basic template for blogging, for more info read the guide about [Add Netlify CMS](https://gridsome.org/docs/guide-netlify-cms).
