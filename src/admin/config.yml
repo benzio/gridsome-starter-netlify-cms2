@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: your_name/repo_name
+  repo: Larsklopstra/gridsome-starter-netlify-cms
 
 media_folder: "uploads"
 public_folder: "../uploads"
