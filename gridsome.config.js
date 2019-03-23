@@ -13,6 +13,12 @@ module.exports = {
 
   plugins: [
     {
+      use: `gridsome-plugin-netlify-cms`,
+      options: {
+        publicPath: `/admin`
+      }
+    },
+    {
       use: '@gridsome/source-filesystem',
       options: {
         path: 'posts/**/*.md',
@@ -22,12 +28,6 @@ module.exports = {
             // ...local plugins
           ]
         }
-      }
-    },
-    {
-      use: `gridsome-plugin-netlify-cms`,
-      options: {
-        publicPath: `/admin`
       }
     },
   ]
