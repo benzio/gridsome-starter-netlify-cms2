@@ -2,7 +2,7 @@ backend:
   name: github
   repo: Larsklopstra/gridsome-starter-netlify-cms
 
-media_folder: "uploads"
+media_folder: "/static/uploads"
 public_folder: "/static/uploads"
 
 collections:
