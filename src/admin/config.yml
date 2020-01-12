@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: Larsklopstra/gridsome-starter-netlify-cms
+  repo: benzio/gridsome-starter-netlify-cms
 
 media_folder: "static/uploads"
 public_folder: "/uploads"
